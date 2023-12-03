@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>pip修改阿里云源 | Hexo</title>
+  <title>ubuntu端口转发 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="pip1pip config set global.index-url https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;">
+  <meta name="description" content="1123456789101112开启网络转发vim &#x2F;etc&#x2F;sysctl.confnet.ipv4.ip_forward&#x3D;1sysctl -p &#x2F;etc&#x2F;sysctl.conf iptables -t nat -A PREROUTING -p tcp --dport 7777 -j REDIRECT --to-port 6666iptables -t nat -A PREROUTING -p t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pip修改阿里云源">
-<meta property="og:url" content="http://example.com/2023/12/03/pip%E4%BF%AE%E6%94%B9%E6%BA%90/index.html">
+<meta property="og:title" content="ubuntu端口转发">
+<meta property="og:url" content="http://example.com/2023/12/03/ubuntu%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="pip1pip config set global.index-url https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;">
+<meta property="og:description" content="1123456789101112开启网络转发vim &#x2F;etc&#x2F;sysctl.confnet.ipv4.ip_forward&#x3D;1sysctl -p &#x2F;etc&#x2F;sysctl.conf iptables -t nat -A PREROUTING -p tcp --dport 7777 -j REDIRECT --to-port 6666iptables -t nat -A PREROUTING -p t">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-12-03T16:13:38.000Z">
-<meta property="article:modified_time" content="2023-12-03T16:16:44.825Z">
+<meta property="article:published_time" content="2023-12-03T17:00:18.000Z">
+<meta property="article:modified_time" content="2023-12-03T17:07:28.351Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,28 +154,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pip修改源" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ubuntu端口转发" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      pip修改阿里云源
+      ubuntu端口转发
     </h1>
   
 
         
-        <a href="/2023/12/03/pip%E4%BF%AE%E6%94%B9%E6%BA%90/" class="archive-article-date">
-  	<time datetime="2023-12-03T16:13:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-03</time>
+        <a href="/2023/12/03/ubuntu%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" class="archive-article-date">
+  	<time datetime="2023-12-03T17:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip config <span class="built_in">set</span> global.index-url https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></table></figure>
-
+        <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">开启网络转发</span><br><span class="line">vim /etc/sysctl.conf</span><br><span class="line">net.ipv4.ip_forward=1</span><br><span class="line"></span><br><span class="line">sysctl -p /etc/sysctl.conf </span><br><span class="line"></span><br><span class="line">iptables -t nat -A PREROUTING -p tcp --dport 7777 -j REDIRECT --to-port 6666</span><br><span class="line"></span><br><span class="line">iptables -t nat -A PREROUTING -p tcp -d 192.168.0.163 --dport 27896 -j DNAT --to-destination 192.168.0.121:27896</span><br><span class="line"></span><br><span class="line">iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.121 --dport 27896 -j SNAT --to-source 192.168.0.163</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
 
       
@@ -254,7 +253,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/03/pip%E4%BF%AE%E6%94%B9%E6%BA%90/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/03/ubuntu%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,18 +267,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2023/12/03/vm%E4%B8%8Bubuntu%E6%89%A9%E5%AE%B9/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vm下ubuntu扩容
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/12/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">开始使用 hexo</div>
+    <a href="/2023/12/03/vm16%E4%B8%8B%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vm16或wsl开机自启动</div>
       <i class="icon-circle-right"></i>
     </a>
   
