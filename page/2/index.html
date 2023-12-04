@@ -152,6 +152,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-apache2开启cgi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/03/apache2%E5%BC%80%E5%90%AFcgi/">apache2开启cgi</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/03/apache2%E5%BC%80%E5%90%AFcgi/" class="archive-article-date">
+  	<time datetime="2023-12-03T17:32:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="开启cgi"><a href="#开启cgi" class="headerlink" title="开启cgi"></a>开启cgi</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a2enmod cgi</span><br><span class="line">systemctl restart apache2</span><br></pre></td></tr></table></figure>
+<p>cgi目录  &#x2F;usr&#x2F;lib&#x2F;cgi-bin&#x2F;</p>
+<h3 id="helloWorld-sh"><a href="#helloWorld-sh" class="headerlink" title="helloWorld.sh"></a>helloWorld.sh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Content-type:text/html&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hello world!&quot;</span></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/03/apache2%E5%BC%80%E5%90%AFcgi/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ubuntu端口转发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
