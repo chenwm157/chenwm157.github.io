@@ -152,6 +152,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ubuntu设置sftp用户" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/03/ubuntu%E8%AE%BE%E7%BD%AEsftp%E7%94%A8%E6%88%B7/">ubuntu设置sftp用户</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/03/ubuntu%E8%AE%BE%E7%BD%AEsftp%E7%94%A8%E6%88%B7/" class="archive-article-date">
+  	<time datetime="2023-12-03T16:37:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="设置sftp"><a href="#设置sftp" class="headerlink" title="设置sftp"></a>设置sftp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">adduser sftpuser</span><br><span class="line">非登陆用户</span><br><span class="line">vim /etc/passwd</span><br><span class="line">/bin/bash -&gt; /sbin/nologin</span><br><span class="line"></span><br><span class="line">根目录必须root组root用户755权限  新建一个文件夹 设置777 用于读写使用</span><br><span class="line"><span class="built_in">chown</span> root:root /home/sftpuser</span><br><span class="line"><span class="built_in">chmod</span> 755 /home/sftpuser</span><br><span class="line"><span class="built_in">mkdir</span> /home/sftpuser/data</span><br><span class="line"><span class="built_in">chmod</span> 777 /home/sftpuser/data</span><br><span class="line"></span><br><span class="line">新建sftp组</span><br><span class="line">addgroup sftp</span><br><span class="line">usermod -aG sftp sftpuser</span><br><span class="line"></span><br><span class="line">设置组成员限定sftp目录</span><br><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line">Subsystem       sftp    internal-sftp</span><br><span class="line">Match Group sftp</span><br><span class="line">        ChrootDirectory /home/%u</span><br><span class="line">        ForceCommand internal-sftp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/03/ubuntu%E8%AE%BE%E7%BD%AEsftp%E7%94%A8%E6%88%B7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vm挂载共享磁盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
