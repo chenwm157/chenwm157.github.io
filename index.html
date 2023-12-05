@@ -152,6 +152,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-tiem格式转化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/05/tiem%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96/">tiem格式转化</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/05/tiem%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2023-12-05T10:02:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def timec(t):</span><br><span class="line">    t1 = t.split(<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">    t2 = <span class="string">&#x27;%s-%02d-%02d&#x27;</span>%(t1[0],int(t1[1]),int(t1[2]))</span><br><span class="line">    <span class="built_in">return</span> t2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from datetime import datetime</span><br><span class="line">f<span class="string">&#x27;&#123;datetime.now()&#125;&#x27;</span>[:10]</span><br><span class="line">f<span class="string">&#x27;&#123;datetime.now()&#125;&#x27;</span>[:19]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from datetime import datetime</span><br><span class="line">format = <span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span></span><br><span class="line">datetime.now().strftime(format)</span><br><span class="line">datetime.strptime(<span class="string">&#x27;2023-12-05 10:05:24&#x27;</span>,format)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/05/tiem%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python-redis操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -703,72 +768,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2023/12/04/python%E5%BF%BD%E7%95%A5%E8%AD%A6%E5%91%8A/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-pymusic-dl的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/04/pymusic-dl%E7%9A%84%E4%BD%BF%E7%94%A8/">pymusic-dl的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2023/12/04/pymusic-dl%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2023-12-04T05:31:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="安装模式"><a href="#安装模式" class="headerlink" title="安装模式"></a>安装模式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/0xHJK/music-dl.git</span><br><span class="line"><span class="built_in">cd</span> music-dl</span><br><span class="line">python3 setup.py install</span><br></pre></td></tr></table></figure>
-<p>输入 music-dl –help 查看说明</p>
-<h3 id="不安装直接运行"><a href="#不安装直接运行" class="headerlink" title="不安装直接运行"></a>不安装直接运行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/0xHJK/music-dl.git</span><br><span class="line"><span class="built_in">cd</span> music-dl</span><br><span class="line">pip3 install -r requirements.txt</span><br><span class="line">python3 ./music-dl</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/04/pymusic-dl%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 
