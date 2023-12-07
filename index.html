@@ -178,7 +178,7 @@
 
 <h4 id="开启-Swap"><a href="#开启-Swap" class="headerlink" title="开启 Swap"></a>开启 Swap</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /swapfile</span><br></pre></td></tr></table></figure>
 
-<h4 id="设置系统启动时自动开启-Swap"><a href="#设置系统启动时自动开启-Swap" class="headerlink" title="设置系统启动时自动开启 Swap"></a>设置系统启动时自动开启 Swap</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fstab</span><br><span class="line">在 fstab 文件最后一行添加下面的内容</span><br><span class="line">/swapfile none swap sw 0 0</span><br></pre></td></tr></table></figure>
+<h4 id="设置系统启动时自动开启-Swap"><a href="#设置系统启动时自动开启-Swap" class="headerlink" title="设置系统启动时自动开启 Swap"></a>设置系统启动时自动开启 Swap</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> /swapfile none swap sw 0 0 &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure>
       
 
       

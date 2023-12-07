@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>ubuntu开启swap | biji</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="创建 Swap 文件1dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;&#x2F;swapfile count&#x3D;6144 bs&#x3D;1M  激活 Swap 文件12chmod 600 &#x2F;swapfilemkswap &#x2F;swapfile  开启 Swap1swapon &#x2F;swapfile  设置系统启动时自动开启 Swap123vim &#x2F;etc&#x2F;fstab在 fstab 文件最后一行添加下面的内容&#x2F;swapfile non">
+  <meta name="description" content="创建 Swap 文件1dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;&#x2F;swapfile count&#x3D;6144 bs&#x3D;1M  激活 Swap 文件12chmod 600 &#x2F;swapfilemkswap &#x2F;swapfile  开启 Swap1swapon &#x2F;swapfile  设置系统启动时自动开启 Swap1echo &#x2F;swapfile none swap sw 0 0 &gt;&gt; &#x2F;etc&#x2F;fsta">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu开启swap">
 <meta property="og:url" content="http://example.com/2023/12/07/ubuntu%E5%BC%80%E5%90%AFswap/index.html">
 <meta property="og:site_name" content="biji">
-<meta property="og:description" content="创建 Swap 文件1dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;&#x2F;swapfile count&#x3D;6144 bs&#x3D;1M  激活 Swap 文件12chmod 600 &#x2F;swapfilemkswap &#x2F;swapfile  开启 Swap1swapon &#x2F;swapfile  设置系统启动时自动开启 Swap123vim &#x2F;etc&#x2F;fstab在 fstab 文件最后一行添加下面的内容&#x2F;swapfile non">
+<meta property="og:description" content="创建 Swap 文件1dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;&#x2F;swapfile count&#x3D;6144 bs&#x3D;1M  激活 Swap 文件12chmod 600 &#x2F;swapfilemkswap &#x2F;swapfile  开启 Swap1swapon &#x2F;swapfile  设置系统启动时自动开启 Swap1echo &#x2F;swapfile none swap sw 0 0 &gt;&gt; &#x2F;etc&#x2F;fsta">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-07T05:55:01.000Z">
-<meta property="article:modified_time" content="2023-12-07T05:56:50.226Z">
+<meta property="article:modified_time" content="2023-12-07T06:09:12.104Z">
 <meta property="article:author" content="haha">
 <meta name="twitter:card" content="summary">
   
@@ -180,7 +180,7 @@
 
 <h4 id="开启-Swap"><a href="#开启-Swap" class="headerlink" title="开启 Swap"></a>开启 Swap</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /swapfile</span><br></pre></td></tr></table></figure>
 
-<h4 id="设置系统启动时自动开启-Swap"><a href="#设置系统启动时自动开启-Swap" class="headerlink" title="设置系统启动时自动开启 Swap"></a>设置系统启动时自动开启 Swap</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fstab</span><br><span class="line">在 fstab 文件最后一行添加下面的内容</span><br><span class="line">/swapfile none swap sw 0 0</span><br></pre></td></tr></table></figure>
+<h4 id="设置系统启动时自动开启-Swap"><a href="#设置系统启动时自动开启-Swap" class="headerlink" title="设置系统启动时自动开启 Swap"></a>设置系统启动时自动开启 Swap</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> /swapfile none swap sw 0 0 &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure>
       
 
       
