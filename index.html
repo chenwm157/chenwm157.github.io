@@ -152,6 +152,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-python计算房贷" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/16/python%E8%AE%A1%E7%AE%97%E6%88%BF%E8%B4%B7/">python计算房贷</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/16/python%E8%AE%A1%E7%AE%97%E6%88%BF%E8%B4%B7/" class="archive-article-date">
+  	<time datetime="2023-12-16T09:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 贷款额为x0，月利率为r，年利率为R，贷款月数为n,贷款年数为N</span></span><br><span class="line">x0 =10000 *  int(input(<span class="string">&quot;请输入贷款额(万)：&quot;</span>))</span><br><span class="line">R =0.01* <span class="built_in">float</span>(input(<span class="string">&quot;请输入年利率(如5.8%，输入：5.8)：&quot;</span>))</span><br><span class="line">N = int(input(<span class="string">&quot;请输入贷款年数(年)：&quot;</span>))</span><br><span class="line"><span class="comment"># r = R / 4</span></span><br><span class="line"><span class="comment"># n = N * 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># test data</span></span><br><span class="line"><span class="comment"># x0=1300000</span></span><br><span class="line"><span class="comment"># R=0.058</span></span><br><span class="line"><span class="comment"># N=30</span></span><br><span class="line">r = R / 12</span><br><span class="line">n = N * 12</span><br><span class="line"></span><br><span class="line"><span class="comment"># 月均还款(本金+利息)</span></span><br><span class="line">a = x0 * r * pow((<span class="number">1</span> + r), n) / (pow((<span class="number">1</span> + r), n) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"># 还款利息总和</span><br><span class="line">Y = n * x0 * r * pow((<span class="number">1</span> + r), n) / (pow((<span class="number">1</span> + r), n) - <span class="number">1</span>) - x0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(&quot;-----等额本息计算-----&quot;)</span><br><span class="line"></span><br><span class="line"># 还款总额</span><br><span class="line">A1 = n * a</span><br><span class="line">print(&quot;第<span class="number">1</span>个月,利息：%s,本金：%s,还款金额(本金+利息)：%s,还款总额：%s&quot; % (x0 * r, a - x0 * r, a, A1))</span><br><span class="line"><span class="comment"># 第2 - n个月还款利息</span></span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> range(2, n + 1):</span><br><span class="line">    ci = (x0 * r - a) * pow((<span class="number">1</span> + r), (t - <span class="number">1</span>)) + a       <span class="comment"># 每月的利息</span></span><br><span class="line">    bi = a - ci                                         <span class="comment"># 每月的本金</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;第%d个月,利息：%s,本金：%s,还款金额(本金+利息)：%s,还款总额：%s&quot;</span> % (t, ci, bi, a, A1))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;-----等额本金计算-----&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每月应还本金</span></span><br><span class="line">d = x0 / n</span><br><span class="line">A2 = 0</span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> range(1, n + 1):</span><br><span class="line">    f = (x0 - d * (m - 1)) * r  <span class="comment"># 每月应还利息</span></span><br><span class="line">    g = d + f                   <span class="comment"># 每月应还本金</span></span><br><span class="line">    A2 = A2 + g                 <span class="comment"># 已还款金额</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;第%d个月，利息：%s,本金：%s,还款金额(本金+利息)：%s&quot;</span> % (m, f, d, g))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;还款总额：%s&quot;</span> % A2)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/16/python%E8%AE%A1%E7%AE%97%E6%88%BF%E8%B4%B7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-虚拟机和mongodb突然断电修复" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -717,68 +779,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2023/12/05/wsl%E5%AE%89%E8%A3%85%E5%88%B0D%E7%9B%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python-ctp端口转发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/04/python-ctp%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">python-ctp端口转发</a>
-    </h1>
-  
-
-        
-        <a href="/2023/12/04/python-ctp%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2023-12-04T09:34:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># tcp mapping created by hutaow(hutaow.com) at 2014-08-31</span></span><br><span class="line"></span><br><span class="line">import sys</span><br><span class="line">import socket</span><br><span class="line">import logging</span><br><span class="line">import threading</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口映射配置信息</span></span><br><span class="line">CFG_REMOTE_IP = <span class="string">&#x27;----&#x27;</span></span><br><span class="line">CFG_REMOTE_PORT = 21</span><br><span class="line">CFG_LOCAL_IP = <span class="string">&#x27;0.0.0.0&#x27;</span></span><br><span class="line">CFG_LOCAL_PORT = 10086</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接收数据缓存大小</span></span><br><span class="line">PKT_BUFF_SIZE = 2048</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(<span class="string">&quot;Proxy Logging&quot;</span>)</span><br><span class="line">formatter = logging.Formatter(<span class="string">&#x27;%(name)-12s %(asctime)s %(levelname)-8s %(lineno)-4d %(message)s&#x27;</span>, <span class="string">&#x27;%Y %b %d %a %H:%M:%S&#x27;</span>,)</span><br><span class="line"></span><br><span class="line">stream_handler = logging.StreamHandler(sys.stderr)</span><br><span class="line">stream_handler.setFormatter(formatter)</span><br><span class="line">logger.addHandler(stream_handler)</span><br><span class="line"></span><br><span class="line">logger.setLevel(logging.DEBUG)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单向流数据传递</span></span><br><span class="line">def tcp_mapping_worker(conn_receiver, conn_sender):</span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        try:</span><br><span class="line">            data = conn_receiver.recv(PKT_BUFF_SIZE)</span><br><span class="line">        except Exception:</span><br><span class="line">            logger.debug(<span class="string">&#x27;Connection closed.&#x27;</span>)</span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> not data:</span><br><span class="line">            logger.info(<span class="string">&#x27;No more data is received.&#x27;</span>)</span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line"></span><br><span class="line">        try:</span><br><span class="line">            conn_sender.sendall(data)</span><br><span class="line">        except Exception:</span><br><span class="line">            logger.error(<span class="string">&#x27;Failed sending data.&#x27;</span>)</span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># logger.info(&#x27;Mapping data &gt; %s &#x27; % repr(data))</span></span><br><span class="line">        <span class="comment">#logger.info(&#x27;Mapping &gt; %s -&gt; %s &gt; %d bytes.&#x27; % (conn_receiver.# getpeername(), conn_sender.getpeername(), len(data)))</span></span><br><span class="line"></span><br><span class="line">    conn_receiver.close()</span><br><span class="line">    conn_sender.close()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口映射请求处理</span></span><br><span class="line">def tcp_mapping_request(local_conn, remote_ip, remote_port):</span><br><span class="line">    remote_conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line">        remote_conn.connect((remote_ip, remote_port))</span><br><span class="line">    except Exception:</span><br><span class="line">        local_conn.close()</span><br><span class="line">        logger.error(<span class="string">&#x27;Unable to connect to the remote server.&#x27;</span>)</span><br><span class="line">        <span class="built_in">return</span></span><br><span class="line"></span><br><span class="line">    threading.Thread(target=tcp_mapping_worker, args=(local_conn, remote_conn)).start()</span><br><span class="line">    threading.Thread(target=tcp_mapping_worker, args=(remote_conn, local_conn)).start()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口映射函数</span></span><br><span class="line">def tcp_mapping(remote_ip, remote_port, local_ip, local_port):</span><br><span class="line">    local_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">    local_server.bind((local_ip, local_port))</span><br><span class="line">    local_server.listen(5)</span><br><span class="line"></span><br><span class="line">    logger.debug(<span class="string">&#x27;Starting mapping service on &#x27;</span> + local_ip + <span class="string">&#x27;:&#x27;</span> + str(local_port) + <span class="string">&#x27; ...&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        try:</span><br><span class="line">            (local_conn, local_addr) = local_server.accept()</span><br><span class="line">        except KeyboardInterrupt, Exception:</span><br><span class="line">            local_server.close()</span><br><span class="line">            logger.debug(<span class="string">&#x27;Stop mapping service.&#x27;</span>)</span><br><span class="line">            <span class="built_in">break</span></span><br><span class="line"></span><br><span class="line">        threading.Thread(target=tcp_mapping_request, args=(local_conn, remote_ip, remote_port)).start()</span><br><span class="line"></span><br><span class="line">        logger.debug(<span class="string">&#x27;Receive mapping request from %s:%d.&#x27;</span> % local_addr)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主函数</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    tcp_mapping(CFG_REMOTE_IP, CFG_REMOTE_PORT, CFG_LOCAL_IP, CFG_LOCAL_PORT)</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/04/python-ctp%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">展开全文 >></a>
         </p>
       
 
