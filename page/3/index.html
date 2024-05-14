@@ -152,6 +152,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-python忽略警告" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/04/python%E5%BF%BD%E7%95%A5%E8%AD%A6%E5%91%8A/">python忽略警告</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/04/python%E5%BF%BD%E7%95%A5%E8%AD%A6%E5%91%8A/" class="archive-article-date">
+  	<time datetime="2023-12-04T08:26:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="几种方法适用于不同的情况："><a href="#几种方法适用于不同的情况：" class="headerlink" title="几种方法适用于不同的情况："></a>几种方法适用于不同的情况：</h2><h3 id="第一种：在终端运行py文件："><a href="#第一种：在终端运行py文件：" class="headerlink" title="第一种：在终端运行py文件："></a>第一种：在终端运行py文件：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -W ignore file.py</span><br></pre></td></tr></table></figure>
+<p>不需要import warning就可以执行</p>
+<h3 id="第二种：全文取消警告的输出："><a href="#第二种：全文取消警告的输出：" class="headerlink" title="第二种：全文取消警告的输出："></a>第二种：全文取消警告的输出：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>加入这条语句之后的警告都将会被忽略，之前的不受影响。</p>
+<h3 id="第三种：部分代码取消警告："><a href="#第三种：部分代码取消警告：" class="headerlink" title="第三种：部分代码取消警告："></a>第三种：部分代码取消警告：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import warnings</span><br><span class="line">with warnings.catch_warnings():</span><br><span class="line">warnings.simplefilter(<span class="string">&quot;ignore&quot;</span>)</span><br><span class="line">a = 1/0.0</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/04/python%E5%BF%BD%E7%95%A5%E8%AD%A6%E5%91%8A/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-pymusic-dl的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -218,19 +284,19 @@
 
 
   
-    <article id="post-docker安装mongodb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-docker安装mongodb，redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/04/docker%E5%AE%89%E8%A3%85mongodb/">docker安装mongodb</a>
+      <a class="article-title" href="/2023/12/04/docker%E5%AE%89%E8%A3%85mongodb%EF%BC%8Credis/">docker安装mongodb</a>
     </h1>
   
 
         
-        <a href="/2023/12/04/docker%E5%AE%89%E8%A3%85mongodb/" class="archive-article-date">
+        <a href="/2023/12/04/docker%E5%AE%89%E8%A3%85mongodb%EF%BC%8Credis/" class="archive-article-date">
   	<time datetime="2023-12-04T01:42:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-04</time>
 </a>
         
@@ -242,6 +308,10 @@
 
 <h3 id="进入查看"><a href="#进入查看" class="headerlink" title="进入查看"></a>进入查看</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it mongo mongo</span><br></pre></td></tr></table></figure>
 <p>第一个mongo容器名称  第二个是mongo程序</p>
+<h3 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis:latest</span><br><span class="line">docker run -itd --name redis-test -p 6379:6379 redis</span><br><span class="line">docker <span class="built_in">exec</span> -it redis-test /bin/bash</span><br></pre></td></tr></table></figure>
+
+
+
 
       
 
@@ -254,7 +324,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/04/docker%E5%AE%89%E8%A3%85mongodb/">展开全文 >></a>
+          <a class="article-more-a" href="/2023/12/04/docker%E5%AE%89%E8%A3%85mongodb%EF%BC%8Credis/">展开全文 >></a>
         </p>
       
 
@@ -307,7 +377,9 @@
         <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">卸载老版本docker</span><br><span class="line">apt-get remove docker docker-engine docker.io containerd runc</span><br><span class="line"></span><br><span class="line">依赖软件包</span><br><span class="line">apt-get install ca-certificates curl gnupg lsb-release</span><br><span class="line"></span><br><span class="line">添加Docker官方的GPG密钥</span><br><span class="line">curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">添加Docker的软件源</span><br><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br><span class="line"></span><br><span class="line">安装Docker</span><br><span class="line">apt-get install docker-ce docker-ce-cli containerd.io</span><br><span class="line"></span><br><span class="line">当前用户添加到docker组</span><br><span class="line">usermod -aG docker $USER</span><br><span class="line"></span><br><span class="line">启动docker</span><br><span class="line">systemctl start docker</span><br><span class="line"></span><br><span class="line">安装工具</span><br><span class="line">apt-get -y install apt-transport-https ca-certificates curl software-properties-common</span><br><span class="line"></span><br><span class="line">重启docker</span><br><span class="line">service docker restart</span><br><span class="line"></span><br><span class="line">验证是否成功</span><br><span class="line">sudo docker run hello-world</span><br><span class="line">sudo docker version</span><br></pre></td></tr></table></figure>
 
 <h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">常用选项说明</span><br><span class="line">-d, --detach=<span class="literal">false</span>， 指定容器运行于前台还是后台，默认为<span class="literal">false</span></span><br><span class="line">-i, --interactive=<span class="literal">false</span>， 打开STDIN，用于控制台交互</span><br><span class="line">-t, --<span class="built_in">tty</span>=<span class="literal">false</span>， 分配<span class="built_in">tty</span>设备，该可以支持终端登录，默认为<span class="literal">false</span></span><br><span class="line">-u, --user=<span class="string">&quot;&quot;</span>， 指定容器的用户</span><br><span class="line">-a, --attach=[]， 登录容器（必须是以docker run -d启动的容器）</span><br><span class="line">-w, --workdir=<span class="string">&quot;&quot;</span>， 指定容器的工作目录</span><br><span class="line">-c, --cpu-shares=0， 设置容器CPU权重，在CPU共享场景使用</span><br><span class="line">-e, --<span class="built_in">env</span>=[]， 指定环境变量，容器中可以使用该环境变量</span><br><span class="line">-m, --memory=<span class="string">&quot;&quot;</span>， 指定容器的内存上限</span><br><span class="line">-P, --publish-all=<span class="literal">false</span>， 指定容器暴露的端口</span><br><span class="line">-p, --publish=[]， 指定容器暴露的端口</span><br><span class="line">-h, --hostname=<span class="string">&quot;&quot;</span>， 指定容器的主机名</span><br><span class="line">-v, --volume=[]， 给容器挂载存储卷，挂载到容器的某个目录</span><br><span class="line">--volumes-from=[]， 给容器挂载其他容器上的卷，挂载到容器的某个目录</span><br><span class="line">--cap-add=[]， 添加权限，权限清单详见：http://linux.die.net/man/7/capabilities</span><br><span class="line">--cap-drop=[]， 删除权限，权限清单详见：http://linux.die.net/man/7/capabilities</span><br><span class="line">--cidfile=<span class="string">&quot;&quot;</span>， 运行容器后，在指定文件中写入容器PID值，一种典型的监控系统用法</span><br><span class="line">--cpuset=<span class="string">&quot;&quot;</span>， 设置容器可以使用哪些CPU，此参数可以用来容器独占CPU</span><br><span class="line">--device=[]， 添加主机设备给容器，相当于设备直通</span><br><span class="line">--dns=[]， 指定容器的dns服务器</span><br><span class="line">--dns-search=[]， 指定容器的dns搜索域名，写入到容器的/etc/resolv.conf文件</span><br><span class="line">--entrypoint=<span class="string">&quot;&quot;</span>， 覆盖image的入口点</span><br><span class="line">--env-file=[]， 指定环境变量文件，文件格式为每行一个环境变量</span><br><span class="line">--expose=[]， 指定容器暴露的端口，即修改镜像的暴露端口</span><br><span class="line">--<span class="built_in">link</span>=[]， 指定容器间的关联，使用其他容器的IP、<span class="built_in">env</span>等信息</span><br><span class="line">--lxc-conf=[]， 指定容器的配置文件，只有在指定--exec-driver=lxc时使用</span><br><span class="line">--name=<span class="string">&quot;&quot;</span>， 指定容器名字，后续可以通过名字进行容器管理，links特性需要使用名字</span><br><span class="line">--net=<span class="string">&quot;bridge&quot;</span>， 容器网络设置:</span><br><span class="line">bridge 使用docker daemon指定的网桥</span><br><span class="line">host //容器使用主机的网络</span><br><span class="line">container:NAME_or_ID &gt;//使用其他容器的网路，共享IP和PORT等网络资源</span><br><span class="line">none 容器使用自己的网络（类似--net=bridge），但是不进行配置</span><br><span class="line">--privileged=<span class="literal">false</span>， 指定容器是否为特权容器，特权容器拥有所有的capabilities</span><br><span class="line">--restart=<span class="string">&quot;no&quot;</span>， 指定容器停止后的重启策略:</span><br><span class="line">no：容器退出时不重启</span><br><span class="line">on-failure：容器故障退出（返回值非零）时重启</span><br><span class="line">always：容器退出时总是重启</span><br><span class="line">--<span class="built_in">rm</span>=<span class="literal">false</span>， 指定容器停止后自动删除容器(不支持以docker run -d启动的容器)</span><br><span class="line">--sig-proxy=<span class="literal">true</span>， 设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">示例</span><br><span class="line">运行一个在后台执行的容器，同时，还能用控制台管理：docker run -i -t -d ubuntu:latest</span><br><span class="line">运行一个带命令在后台不断执行的容器，不直接展示容器内部信息：docker run -d ubuntu:latest ping www.docker.com</span><br><span class="line">运行一个在后台不断执行的容器，同时带有命令，程序被终止后还能重启继续跑，还能用控制台管理，docker run -d --restart=always ubuntu:latest ping www.docker.com</span><br><span class="line">为容器指定一个名字，docker run -d --name=ubuntu_server ubuntu:latest</span><br><span class="line">容器暴露80端口，并指定宿主机80端口与其通信(: 之前是宿主机端口，之后是容器需暴露的端口)，docker run -d --name=ubuntu_server -p 80:80 ubuntu:latest</span><br><span class="line">指定容器内目录与宿主机目录共享(: 之前是宿主机文件夹，之后是容器需共享的文件夹)，docker run -d --name=ubuntu_server -v /etc/www:/var/www ubuntu:latest</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="安装中文图形界面"><a href="#安装中文图形界面" class="headerlink" title="安装中文图形界面"></a>安装中文图形界面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull 6053537/portainer-ce</span><br><span class="line"></span><br><span class="line">docker run -p 9000:9000 -p 8000:8000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /mydata/portainer/data:/data -d 6053537/portainer-ce</span><br></pre></td></tr></table></figure>
+<h3 id="安装中文图形界面"><a href="#安装中文图形界面" class="headerlink" title="安装中文图形界面"></a>安装中文图形界面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker pull 6053537/portainer-ce</span><br><span class="line"></span><br><span class="line">docker run -p 9000:9000 -p 8000:8000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /mydata/portainer/data:/data -d 6053537/portainer-ce</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="重置中文图形界面密码"><a href="#重置中文图形界面密码" class="headerlink" title="重置中文图形界面密码"></a>重置中文图形界面密码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker stop portainer</span><br><span class="line">docker pull portainer/helper-reset-password</span><br><span class="line">docker run --<span class="built_in">rm</span> -v /mydata/portainer/data:/data portainer/helper-reset-password</span><br></pre></td></tr></table></figure>
       
 
       
@@ -728,68 +800,6 @@
 
 
   
-    <article id="post-vm挂载共享磁盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/03/vm%E6%8C%82%E8%BD%BD%E5%85%B1%E4%BA%AB%E7%A3%81%E7%9B%98/">vm挂载共享文件夹</a>
-    </h1>
-  
-
-        
-        <a href="/2023/12/03/vm%E6%8C%82%E8%BD%BD%E5%85%B1%E4%BA%AB%E7%A3%81%E7%9B%98/" class="archive-article-date">
-  	<time datetime="2023-12-03T16:32:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="挂载共享文件夹"><a href="#挂载共享文件夹" class="headerlink" title="挂载共享文件夹"></a>挂载共享文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1.vm下设置共享文件夹</span><br><span class="line">2.安装vm-tool</span><br><span class="line">apt install open-vm-tools</span><br><span class="line">桌面版的</span><br><span class="line">apt install open-vm-tools-desktop </span><br><span class="line">3.挂载磁盘</span><br><span class="line"><span class="built_in">mkdir</span> /mnt/hgfs</span><br><span class="line">vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other</span><br><span class="line">取消</span><br><span class="line">umonut /home/wangpan/ </span><br><span class="line"></span><br><span class="line">文件夹绑定到指定目录 </span><br><span class="line"><span class="built_in">mkdir</span> /mnt/hgfs/data</span><br><span class="line"><span class="built_in">mkdir</span> /home/user/data</span><br><span class="line">mount --<span class="built_in">bind</span> /mnt/hgfs/data /home/user/data</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/03/vm%E6%8C%82%E8%BD%BD%E5%85%B1%E4%BA%AB%E7%A3%81%E7%9B%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -804,7 +814,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 haha
+    		&copy; 2024 haha
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>pymongo操作 | biji</title>
+  <title>docker安装mongodb | biji</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="login123import pymongourl &#x3D; &#x27;mongodb:&#x2F;&#x2F;127.0.0.1:27017&#x27;mgct &#x3D; pymongo.MongoClient(url)  inster123456data &#x3D; [    &#123;a:1,b:2&#125;,    &#123;a:3,b:4&#125;]coll &#x3D; mgct[&#x27;test&#x27;][&amp;#x2">
+  <meta name="description" content="拉取并安装12345docker pull mongo:4.4mkdir -p &#x2F;dockerMongo&#x2F;datadocker run -itd --restart&#x3D;always  --name mongo -v &#x2F;dockerMongo&#x2F;data:&#x2F;data&#x2F;db -p 27017:27017 mongo:4.4  进入查看1docker exec -it mongo mongo 第一个mong">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pymongo操作">
-<meta property="og:url" content="http://example.com/2023/12/05/pymongo%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="docker安装mongodb">
+<meta property="og:url" content="http://example.com/2023/12/04/docker%E5%AE%89%E8%A3%85mongodb%EF%BC%8Credis/index.html">
 <meta property="og:site_name" content="biji">
-<meta property="og:description" content="login123import pymongourl &#x3D; &#x27;mongodb:&#x2F;&#x2F;127.0.0.1:27017&#x27;mgct &#x3D; pymongo.MongoClient(url)  inster123456data &#x3D; [    &#123;a:1,b:2&#125;,    &#123;a:3,b:4&#125;]coll &#x3D; mgct[&#x27;test&#x27;][&amp;#x2">
+<meta property="og:description" content="拉取并安装12345docker pull mongo:4.4mkdir -p &#x2F;dockerMongo&#x2F;datadocker run -itd --restart&#x3D;always  --name mongo -v &#x2F;dockerMongo&#x2F;data:&#x2F;data&#x2F;db -p 27017:27017 mongo:4.4  进入查看1docker exec -it mongo mongo 第一个mong">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-05T09:21:59.000Z">
-<meta property="article:modified_time" content="2023-12-08T01:08:01.000Z">
+<meta property="article:published_time" content="2023-12-04T01:42:42.000Z">
+<meta property="article:modified_time" content="2024-05-14T14:03:31.870Z">
 <meta property="article:author" content="haha">
 <meta name="twitter:card" content="summary">
   
@@ -154,35 +154,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pymongo操作" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-docker安装mongodb，redis" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      pymongo操作
+      docker安装mongodb
     </h1>
   
 
         
-        <a href="/2023/12/05/pymongo%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2023-12-05T09:21:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-05</time>
+        <a href="/2023/12/04/docker%E5%AE%89%E8%A3%85mongodb%EF%BC%8Credis/" class="archive-article-date">
+  	<time datetime="2023-12-04T01:42:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="login"><a href="#login" class="headerlink" title="login"></a>login</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import pymongo</span><br><span class="line">url = <span class="string">&#x27;mongodb://127.0.0.1:27017&#x27;</span></span><br><span class="line">mgct = pymongo.MongoClient(url)</span><br></pre></td></tr></table></figure>
+        <h3 id="拉取并安装"><a href="#拉取并安装" class="headerlink" title="拉取并安装"></a>拉取并安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker pull mongo:4.4</span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> -p /dockerMongo/data</span><br><span class="line"></span><br><span class="line">docker run -itd --restart=always  --name mongo -v /dockerMongo/data:/data/db -p 27017:27017 mongo:4.4</span><br></pre></td></tr></table></figure>
 
-<h3 id="inster"><a href="#inster" class="headerlink" title="inster"></a>inster</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data = [</span><br><span class="line">    &#123;a:1,b:2&#125;,</span><br><span class="line">    &#123;a:3,b:4&#125;</span><br><span class="line">]</span><br><span class="line">coll = mgct[<span class="string">&#x27;test&#x27;</span>][<span class="string">&#x27;data&#x27;</span>]</span><br><span class="line">coll.inster_many(data)</span><br></pre></td></tr></table></figure>
+<h3 id="进入查看"><a href="#进入查看" class="headerlink" title="进入查看"></a>进入查看</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it mongo mongo</span><br></pre></td></tr></table></figure>
+<p>第一个mongo容器名称  第二个是mongo程序</p>
+<h3 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis:latest</span><br><span class="line">docker run -itd --name redis-test -p 6379:6379 redis</span><br><span class="line">docker <span class="built_in">exec</span> -it redis-test /bin/bash</span><br></pre></td></tr></table></figure>
 
-<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ser = [</span><br><span class="line">        &#123;<span class="string">&#x27;a&#x27;</span>: &#123; <span class="string">&#x27;$lt&#x27;</span>: 1 &#125;&#125;,      </span><br><span class="line">        &#123;<span class="string">&#x27;b&#x27;</span>: &#123; <span class="string">&#x27;$gt&#x27;</span>: 2 &#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;c&#x27;</span>: &#123; <span class="string">&#x27;$lte&#x27;</span>: 3 &#125;&#125;,      </span><br><span class="line">        &#123;<span class="string">&#x27;d&#x27;</span>: &#123; <span class="string">&#x27;$gte&#x27;</span>: 4 &#125;&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;e&#x27;</span>: &#123; <span class="string">&#x27;$qe&#x27;</span>: 5 &#125;&#125;</span><br><span class="line">    ]</span><br><span class="line">black = [3,4]</span><br><span class="line"><span class="keyword">for</span> bk <span class="keyword">in</span> black:</span><br><span class="line">    ser.append(</span><br><span class="line">        &#123;<span class="string">&#x27;g&#x27;</span>: &#123; <span class="string">&#x27;$ne&#x27;</span>: bk &#125;&#125;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">x = coll.find(&#123;<span class="string">&#x27;$and&#x27;</span>:ser &#125;).<span class="built_in">sort</span>( <span class="string">&#x27;time&#x27;</span>,-1 )</span><br><span class="line"><span class="comment"># &#x27;$or&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="many-update"><a href="#many-update" class="headerlink" title="many-update"></a>many-update</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">datas = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> data:</span><br><span class="line">    datas.append( pymongo.UpdateOne(&#123;<span class="string">&#x27;code&#x27;</span>:i[<span class="string">&#x27;code&#x27;</span>]&#125;,&#123;<span class="string">&#x27;$set&#x27;</span>:i&#125;,True))</span><br><span class="line">coll.bulk_write(datas)</span><br></pre></td></tr></table></figure>
 
-<h3 id="create-index"><a href="#create-index" class="headerlink" title="create-index"></a>create-index</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="string">&#x27;日期_-1&#x27;</span> not <span class="keyword">in</span> coll.index_information().keys():</span><br><span class="line">    coll.create_index([(<span class="string">&quot;日期&quot;</span>, -1)], unique=True, background=True)</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -261,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/05/pymongo%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/04/docker%E5%AE%89%E8%A3%85mongodb%EF%BC%8Credis/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,18 +275,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2023/12/05/python-redis%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/12/04/pymusic-dl%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          python-redis操作
+          pymusic-dl的使用
         
       </div>
     </a>
   
   
-    <a href="/2023/12/05/vnpy%E6%95%B0%E6%8D%AE%E5%85%A5%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vnpy数据入库</div>
+    <a href="/2023/12/04/docker%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">docker安装使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
