@@ -152,6 +152,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ubuntu安装TA-LIB" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/05/15/ubuntu%E5%AE%89%E8%A3%85TA-LIB/">ubuntu安装ta-lib</a>
+    </h1>
+  
+
+        
+        <a href="/2024/05/15/ubuntu%E5%AE%89%E8%A3%85TA-LIB/" class="archive-article-date">
+  	<time datetime="2024-05-15T17:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ubuntu 安装TA-Lib</span><br><span class="line">可能需要参考https://blog.csdn.net/vivian187/article/details/51750639安装编译器</span><br><span class="line"></span><br><span class="line">wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz</span><br><span class="line">tar xf ta-lib-0.4.0-src.tar.gz</span><br><span class="line"><span class="built_in">cd</span> ta-lib</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">pip install TA-Lib</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/05/15/ubuntu%E5%AE%89%E8%A3%85TA-LIB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -419,6 +481,68 @@
 
 
   
+    <article id="post-macos制作ubuntu安装盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/18/macos%E5%88%B6%E4%BD%9Cubuntu%E5%AE%89%E8%A3%85%E7%9B%98/">macos制作ubuntu安装盘</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/18/macos%E5%88%B6%E4%BD%9Cubuntu%E5%AE%89%E8%A3%85%E7%9B%98/" class="archive-article-date">
+  	<time datetime="2023-12-18T09:18:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">diskutil list</span><br><span class="line"></span><br><span class="line">diskutil unmountDisk /dev/disk2</span><br><span class="line"></span><br><span class="line">sudo <span class="built_in">dd</span> <span class="keyword">if</span>=ubuntu-18.04.dmg of=/dev/rdisk2 bs=2m</span><br><span class="line"></span><br><span class="line">sudo killall -29 <span class="built_in">dd</span></span><br><span class="line"></span><br><span class="line">diskutil eject /dev/disk2</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/18/macos%E5%88%B6%E4%BD%9Cubuntu%E5%AE%89%E8%A3%85%E7%9B%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-uint8Array互转hex-string" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -653,136 +777,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2023/12/11/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8Cmongodb%E7%AA%81%E7%84%B6%E6%96%AD%E7%94%B5%E4%BF%AE%E5%A4%8D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ubuntu开启swap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/07/ubuntu%E5%BC%80%E5%90%AFswap/">ubuntu开启swap</a>
-    </h1>
-  
-
-        
-        <a href="/2023/12/07/ubuntu%E5%BC%80%E5%90%AFswap/" class="archive-article-date">
-  	<time datetime="2023-12-07T05:55:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="创建-Swap-文件"><a href="#创建-Swap-文件" class="headerlink" title="创建 Swap 文件"></a>创建 Swap 文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero of=/swapfile count=6144 bs=1M</span><br></pre></td></tr></table></figure>
-
-<h4 id="激活-Swap-文件"><a href="#激活-Swap-文件" class="headerlink" title="激活 Swap 文件"></a>激活 Swap 文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 600 /swapfile</span><br><span class="line">mkswap /swapfile</span><br></pre></td></tr></table></figure>
-
-<h4 id="开启-Swap"><a href="#开启-Swap" class="headerlink" title="开启 Swap"></a>开启 Swap</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /swapfile</span><br></pre></td></tr></table></figure>
-
-<h4 id="设置系统启动时自动开启-Swap"><a href="#设置系统启动时自动开启-Swap" class="headerlink" title="设置系统启动时自动开启 Swap"></a>设置系统启动时自动开启 Swap</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> /swapfile none swap sw 0 0 &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/07/ubuntu%E5%BC%80%E5%90%AFswap/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-wind2pd" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/06/wind2pd/">wind2pd</a>
-    </h1>
-  
-
-        
-        <a href="/2023/12/06/wind2pd/" class="archive-article-date">
-  	<time datetime="2023-12-06T01:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">def wind2pd(re,h_na = 0):</span><br><span class="line">    import warnings</span><br><span class="line">    warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br><span class="line">    import pandas as pd</span><br><span class="line">    import numpy as np</span><br><span class="line">    te = pd.DataFrame(re.Data).T</span><br><span class="line">    te.columns = re.Fields</span><br><span class="line">    te[<span class="string">&#x27;time&#x27;</span>] = re.Times</span><br><span class="line">    <span class="comment"># te = te.dropna(axis=0)</span></span><br><span class="line">    <span class="keyword">if</span> h_na == 1:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(te)):</span><br><span class="line">            <span class="keyword">if</span> np.isnan( te.iloc[i][<span class="string">&#x27;open&#x27;</span>] ):</span><br><span class="line">                te[<span class="string">&#x27;open&#x27;</span>].iloc[i] = te[<span class="string">&#x27;open&#x27;</span>].iloc[i-1]</span><br><span class="line">                te[<span class="string">&#x27;high&#x27;</span>].iloc[i] = te[<span class="string">&#x27;high&#x27;</span>].iloc[i-1]</span><br><span class="line">                te[<span class="string">&#x27;low&#x27;</span>].iloc[i] = te[<span class="string">&#x27;low&#x27;</span>].iloc[i-1]</span><br><span class="line">                te[<span class="string">&#x27;close&#x27;</span>].iloc[i] = te[<span class="string">&#x27;close&#x27;</span>].iloc[i-1]</span><br><span class="line">                te[<span class="string">&#x27;volume&#x27;</span>].iloc[i] = 0</span><br><span class="line">                te[<span class="string">&#x27;amount&#x27;</span>].iloc[i] = 0</span><br><span class="line">    <span class="keyword">if</span> h_na == 2:</span><br><span class="line">        te = te.dropna(axis=0)</span><br><span class="line">        te = te.reset_index(drop=True)</span><br><span class="line">    <span class="built_in">return</span> te</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/06/wind2pd/">展开全文 >></a>
         </p>
       
 
