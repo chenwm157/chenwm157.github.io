@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>ubuntu端口转发 | biji</title>
+  <title>ubuntu安装ta-lib | biji</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1123456789101112开启网络转发vim &#x2F;etc&#x2F;sysctl.confnet.ipv4.ip_forward&#x3D;1sysctl -p &#x2F;etc&#x2F;sysctl.conf iptables -t nat -A PREROUTING -p tcp --dport 7777 -j REDIRECT --to-port 6666iptables -t nat -A PREROUTING -p t">
+  <meta name="description" content="12345678910ubuntu 安装TA-Lib可能需要参考https:&#x2F;&#x2F;blog.csdn.net&#x2F;vivian187&#x2F;article&#x2F;details&#x2F;51750639安装编译器wget http:&#x2F;&#x2F;prdownloads.sourceforge.net&#x2F;ta-lib&#x2F;ta-lib-0.4.0-src.tar.gztar xf ta-lib-0.4.0-src.tar.gzcd ta-l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu端口转发">
-<meta property="og:url" content="http://example.com/2023/12/03/ubuntu%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/index.html">
+<meta property="og:title" content="ubuntu安装ta-lib">
+<meta property="og:url" content="http://example.com/2024/05/16/ubuntu%E5%AE%89%E8%A3%85TA-LIB/index.html">
 <meta property="og:site_name" content="biji">
-<meta property="og:description" content="1123456789101112开启网络转发vim &#x2F;etc&#x2F;sysctl.confnet.ipv4.ip_forward&#x3D;1sysctl -p &#x2F;etc&#x2F;sysctl.conf iptables -t nat -A PREROUTING -p tcp --dport 7777 -j REDIRECT --to-port 6666iptables -t nat -A PREROUTING -p t">
+<meta property="og:description" content="12345678910ubuntu 安装TA-Lib可能需要参考https:&#x2F;&#x2F;blog.csdn.net&#x2F;vivian187&#x2F;article&#x2F;details&#x2F;51750639安装编译器wget http:&#x2F;&#x2F;prdownloads.sourceforge.net&#x2F;ta-lib&#x2F;ta-lib-0.4.0-src.tar.gztar xf ta-lib-0.4.0-src.tar.gzcd ta-l">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-03T17:00:18.000Z">
-<meta property="article:modified_time" content="2023-12-03T17:07:28.000Z">
+<meta property="article:published_time" content="2024-05-15T17:00:18.000Z">
+<meta property="article:modified_time" content="2024-05-15T08:43:32.587Z">
 <meta property="article:author" content="haha">
 <meta name="twitter:card" content="summary">
   
@@ -154,27 +154,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ubuntu端口转发" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ubuntu安装TA-LIB" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ubuntu端口转发
+      ubuntu安装ta-lib
     </h1>
   
 
         
-        <a href="/2023/12/03/ubuntu%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2023-12-03T17:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-03</time>
+        <a href="/2024/05/16/ubuntu%E5%AE%89%E8%A3%85TA-LIB/" class="archive-article-date">
+  	<time datetime="2024-05-15T17:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">开启网络转发</span><br><span class="line">vim /etc/sysctl.conf</span><br><span class="line">net.ipv4.ip_forward=1</span><br><span class="line"></span><br><span class="line">sysctl -p /etc/sysctl.conf </span><br><span class="line"></span><br><span class="line">iptables -t nat -A PREROUTING -p tcp --dport 7777 -j REDIRECT --to-port 6666</span><br><span class="line"></span><br><span class="line">iptables -t nat -A PREROUTING -p tcp -d 192.168.0.163 --dport 27896 -j DNAT --to-destination 192.168.0.121:27896</span><br><span class="line"></span><br><span class="line">iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.121 --dport 27896 -j SNAT --to-source 192.168.0.163</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ubuntu 安装TA-Lib</span><br><span class="line">可能需要参考https://blog.csdn.net/vivian187/article/details/51750639安装编译器</span><br><span class="line"></span><br><span class="line">wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz</span><br><span class="line">tar xf ta-lib-0.4.0-src.tar.gz</span><br><span class="line"><span class="built_in">cd</span> ta-lib</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">pip install TA-Lib</span><br></pre></td></tr></table></figure>
       
 
       
@@ -253,7 +253,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/03/ubuntu%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/05/16/ubuntu%E5%AE%89%E8%A3%85TA-LIB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -267,18 +267,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2023/12/03/apache2%E5%BC%80%E5%90%AFcgi/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/05/18/%E5%88%9B%E5%BB%BArc-local/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          apache2开启cgi
+          创建rc.local
         
       </div>
     </a>
   
   
-    <a href="/2023/12/03/vm16%E4%B8%8B%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vm16或wsl开机自启动</div>
+    <a href="/2024/05/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开始使用 hexo</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>ubuntu安装ta-lib | biji</title>
+  <title>vm挂载共享文件夹 | biji</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910ubuntu 安装TA-Lib可能需要参考https:&#x2F;&#x2F;blog.csdn.net&#x2F;vivian187&#x2F;article&#x2F;details&#x2F;51750639安装编译器wget http:&#x2F;&#x2F;prdownloads.sourceforge.net&#x2F;ta-lib&#x2F;ta-lib-0.4.0-src.tar.gztar xf ta-lib-0.4.0-src.tar.gzcd ta-l">
+  <meta name="description" content="挂载共享文件夹1234567891011121314151.vm下设置共享文件夹2.安装vm-toolapt install open-vm-tools桌面版的apt install open-vm-tools-desktop 3.挂载磁盘mkdir &#x2F;mnt&#x2F;hgfsvmhgfs-fuse .host:&#x2F; &#x2F;mnt&#x2F;hgfs -o allow_other取消umonut &#x2F;home&#x2F;wangpa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu安装ta-lib">
-<meta property="og:url" content="http://example.com/2024/05/15/ubuntu%E5%AE%89%E8%A3%85TA-LIB/index.html">
+<meta property="og:title" content="vm挂载共享文件夹">
+<meta property="og:url" content="http://example.com/2023/12/04/vm%E6%8C%82%E8%BD%BD%E5%85%B1%E4%BA%AB%E7%A3%81%E7%9B%98/index.html">
 <meta property="og:site_name" content="biji">
-<meta property="og:description" content="12345678910ubuntu 安装TA-Lib可能需要参考https:&#x2F;&#x2F;blog.csdn.net&#x2F;vivian187&#x2F;article&#x2F;details&#x2F;51750639安装编译器wget http:&#x2F;&#x2F;prdownloads.sourceforge.net&#x2F;ta-lib&#x2F;ta-lib-0.4.0-src.tar.gztar xf ta-lib-0.4.0-src.tar.gzcd ta-l">
+<meta property="og:description" content="挂载共享文件夹1234567891011121314151.vm下设置共享文件夹2.安装vm-toolapt install open-vm-tools桌面版的apt install open-vm-tools-desktop 3.挂载磁盘mkdir &#x2F;mnt&#x2F;hgfsvmhgfs-fuse .host:&#x2F; &#x2F;mnt&#x2F;hgfs -o allow_other取消umonut &#x2F;home&#x2F;wangpa">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-05-15T17:00:18.000Z">
-<meta property="article:modified_time" content="2024-05-15T08:43:32.587Z">
+<meta property="article:published_time" content="2023-12-03T16:32:17.000Z">
+<meta property="article:modified_time" content="2023-12-03T17:09:38.000Z">
 <meta property="article:author" content="haha">
 <meta name="twitter:card" content="summary">
   
@@ -154,27 +154,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ubuntu安装TA-LIB" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vm挂载共享磁盘" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ubuntu安装ta-lib
+      vm挂载共享文件夹
     </h1>
   
 
         
-        <a href="/2024/05/15/ubuntu%E5%AE%89%E8%A3%85TA-LIB/" class="archive-article-date">
-  	<time datetime="2024-05-15T17:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-05-15</time>
+        <a href="/2023/12/04/vm%E6%8C%82%E8%BD%BD%E5%85%B1%E4%BA%AB%E7%A3%81%E7%9B%98/" class="archive-article-date">
+  	<time datetime="2023-12-03T16:32:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ubuntu 安装TA-Lib</span><br><span class="line">可能需要参考https://blog.csdn.net/vivian187/article/details/51750639安装编译器</span><br><span class="line"></span><br><span class="line">wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz</span><br><span class="line">tar xf ta-lib-0.4.0-src.tar.gz</span><br><span class="line"><span class="built_in">cd</span> ta-lib</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">pip install TA-Lib</span><br></pre></td></tr></table></figure>
+        <h3 id="挂载共享文件夹"><a href="#挂载共享文件夹" class="headerlink" title="挂载共享文件夹"></a>挂载共享文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1.vm下设置共享文件夹</span><br><span class="line">2.安装vm-tool</span><br><span class="line">apt install open-vm-tools</span><br><span class="line">桌面版的</span><br><span class="line">apt install open-vm-tools-desktop </span><br><span class="line">3.挂载磁盘</span><br><span class="line"><span class="built_in">mkdir</span> /mnt/hgfs</span><br><span class="line">vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other</span><br><span class="line">取消</span><br><span class="line">umonut /home/wangpan/ </span><br><span class="line"></span><br><span class="line">文件夹绑定到指定目录 </span><br><span class="line"><span class="built_in">mkdir</span> /mnt/hgfs/data</span><br><span class="line"><span class="built_in">mkdir</span> /home/user/data</span><br><span class="line">mount --<span class="built_in">bind</span> /mnt/hgfs/data /home/user/data</span><br></pre></td></tr></table></figure>
       
 
       
@@ -253,7 +253,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/05/15/ubuntu%E5%AE%89%E8%A3%85TA-LIB/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/04/vm%E6%8C%82%E8%BD%BD%E5%85%B1%E4%BA%AB%E7%A3%81%E7%9B%98/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -267,9 +267,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2023/12/04/ubuntu%E8%AE%BE%E7%BD%AEsftp%E7%94%A8%E6%88%B7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ubuntu设置sftp用户
+        
+      </div>
+    </a>
   
-    <a href="/2024/05/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">开始使用 hexo</div>
+  
+    <a href="/2023/12/04/vm%E4%B8%8Bubuntu%E6%89%A9%E5%AE%B9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vm下ubuntu扩容</div>
       <i class="icon-circle-right"></i>
     </a>
   
