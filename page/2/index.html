@@ -152,6 +152,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-uint8Array互转hex-string" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/18/uint8Array%E4%BA%92%E8%BD%AChex-string/">uint8Array互转hex,string</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/18/uint8Array%E4%BA%92%E8%BD%AChex-string/" class="archive-article-date">
+  	<time datetime="2023-12-18T03:12:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="uint8Array-hex"><a href="#uint8Array-hex" class="headerlink" title="uint8Array hex"></a>uint8Array hex</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const fromHexString = hexString =&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span>(hexString.<span class="built_in">split</span>(<span class="string">&#x27;x&#x27;</span>).length&gt;1)hexString = hexString.<span class="built_in">split</span>(<span class="string">&#x27;x&#x27;</span>)[1]</span><br><span class="line">    <span class="keyword">if</span>(hexString.length%2 == 1)hexString=<span class="string">&#x27;0&#x27;</span>+hexString</span><br><span class="line">    <span class="built_in">return</span>   Uint8Array.from( Buffer.from(hexString, <span class="string">&#x27;hex&#x27;</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const toHexString = bytes =&gt;&#123;</span><br><span class="line">    re = Buffer.from(bytes).toString(<span class="string">&#x27;hex&#x27;</span>);</span><br><span class="line">    a = re.slice(0,1)</span><br><span class="line">    <span class="keyword">if</span>(a == <span class="string">&#x27;0&#x27;</span>)re=re.slice(1,)</span><br><span class="line">    <span class="built_in">return</span> re</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="uint8Array-base58"><a href="#uint8Array-base58" class="headerlink" title="uint8Array base58"></a>uint8Array base58</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var base58 = require(<span class="string">&#x27;base58-native&#x27;</span>);</span><br><span class="line"></span><br><span class="line">u8 = new Uint8Array( base58.decode(base58str))</span><br><span class="line"></span><br><span class="line">base58str = base58.encode(u8)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="uint8Array-base64"><a href="#uint8Array-base64" class="headerlink" title="uint8Array base64"></a>uint8Array base64</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> base64ToUint8Array(base64String) &#123;</span><br><span class="line">　　　　const padding = <span class="string">&#x27;=&#x27;</span>.repeat((<span class="number">4</span> - base64String.length % <span class="number">4</span>) % <span class="number">4</span>);</span><br><span class="line">       const base64 = (base64String + padding)</span><br><span class="line">                    .replace(/\-/g, &#x27;+&#x27;)</span><br><span class="line">                    .replace(/_/g, &#x27;/&#x27;);</span><br><span class="line"></span><br><span class="line">       const rawData = window.atob(base64);</span><br><span class="line">       const outputArray = new Uint8Array(rawData.length);</span><br><span class="line"></span><br><span class="line">       for (let i = <span class="number">0</span>; i &lt; rawData.length; ++i) &#123;</span><br><span class="line">            outputArray[i] = rawData.charCodeAt(i);</span><br><span class="line">       &#125;</span><br><span class="line">       return outputArray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function arrayBufferToBase64(buffer) &#123;</span><br><span class="line">         var binary = &#x27;&#x27;;</span><br><span class="line">         var bytes = new Uint8Array(buffer);</span><br><span class="line">         var len = bytes.byteLength;</span><br><span class="line">         for (var i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">               binary += String.fromCharCode(bytes[i]);</span><br><span class="line">         &#125;</span><br><span class="line">         return window.btoa(binary);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="uint8Array-string"><a href="#uint8Array-string" class="headerlink" title="uint8Array string"></a>uint8Array string</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Uint8ArrayToString(fileData)&#123;</span><br><span class="line">  var dataString = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="keyword">for</span> (var i = 0; i &lt; fileData.length; i++) &#123;</span><br><span class="line">    dataString += String.fromCharCode(fileData[i]);</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="built_in">return</span> dataString</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> stringToUint8Array(str)&#123;</span><br><span class="line">  var arr = [];</span><br><span class="line">  <span class="keyword">for</span> (var i = 0, j = str.length; i &lt; j; ++i) &#123;</span><br><span class="line">    arr.push(str.charCodeAt(i));</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  var tmpUint8Array = new Uint8Array(arr);</span><br><span class="line">  <span class="built_in">return</span> tmpUint8Array</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/18/uint8Array%E4%BA%92%E8%BD%AChex-string/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vmware单文件多文件互转" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -159,13 +228,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/18/vmware%E5%8D%95%E6%96%87%E4%BB%B6%E5%A4%9A%E6%96%87%E4%BB%B6%E4%BA%92%E8%BD%AC/">vmware单文件多文件互转</a>
+      <a class="article-title" href="/2023/12/17/vmware%E5%8D%95%E6%96%87%E4%BB%B6%E5%A4%9A%E6%96%87%E4%BB%B6%E4%BA%92%E8%BD%AC/">vmware单文件多文件互转</a>
     </h1>
   
 
         
-        <a href="/2023/12/18/vmware%E5%8D%95%E6%96%87%E4%BB%B6%E5%A4%9A%E6%96%87%E4%BB%B6%E4%BA%92%E8%BD%AC/" class="archive-article-date">
-  	<time datetime="2023-12-17T18:19:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-18</time>
+        <a href="/2023/12/17/vmware%E5%8D%95%E6%96%87%E4%BB%B6%E5%A4%9A%E6%96%87%E4%BB%B6%E4%BA%92%E8%BD%AC/" class="archive-article-date">
+  	<time datetime="2023-12-17T18:19:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-17</time>
 </a>
         
       </header>
@@ -184,7 +253,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/18/vmware%E5%8D%95%E6%96%87%E4%BB%B6%E5%A4%9A%E6%96%87%E4%BB%B6%E4%BA%92%E8%BD%AC/">展开全文 >></a>
+          <a class="article-more-a" href="/2023/12/17/vmware%E5%8D%95%E6%96%87%E4%BB%B6%E5%A4%9A%E6%96%87%E4%BB%B6%E4%BA%92%E8%BD%AC/">展开全文 >></a>
         </p>
       
 
@@ -709,69 +778,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2023/12/05/pymongo%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vnpy数据入库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/05/vnpy%E6%95%B0%E6%8D%AE%E5%85%A5%E5%BA%93/">vnpy数据入库</a>
-    </h1>
-  
-
-        
-        <a href="/2023/12/05/vnpy%E6%95%B0%E6%8D%AE%E5%85%A5%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2023-12-05T08:30:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="数据入库"><a href="#数据入库" class="headerlink" title="数据入库"></a>数据入库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">from vnpy.trader.database import Exchange,BarData,get_database,Interval,DB_TZ</span><br><span class="line">import pandas as pd</span><br><span class="line">from datetime import datetime</span><br><span class="line">import os,pymongo</span><br><span class="line"></span><br><span class="line">gtd = get_database()</span><br><span class="line"></span><br><span class="line"><span class="comment"># gtd.get_bar_overview()</span></span><br><span class="line"></span><br><span class="line">def get_time(_dt):</span><br><span class="line">    t = datetime.strptime( _dt ,<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)   </span><br><span class="line">    _time=t.replace(tzinfo=DB_TZ)</span><br><span class="line">    <span class="built_in">return</span> _time</span><br><span class="line"></span><br><span class="line"><span class="comment">### insert option</span></span><br><span class="line">path = <span class="string">&#x27;options2&#x27;</span></span><br><span class="line">files = os.listdir(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> files:</span><br><span class="line">    <span class="comment"># f = files[0]</span></span><br><span class="line">    _f = f<span class="string">&#x27;&#123;path&#125;/&#123;f&#125;&#x27;</span></span><br><span class="line">    code = f.split(<span class="string">&#x27;.csv&#x27;</span>)[0]</span><br><span class="line">    data = pd.read_csv(_f)</span><br><span class="line">    <span class="comment"># del data[&#x27;datetime.1&#x27;]</span></span><br><span class="line">    bars = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(data)):</span><br><span class="line">        tem=data.loc[i]</span><br><span class="line">        bar = BarData(<span class="string">&#x27;vnpy&#x27;</span>,code,Exchange.SHFE,</span><br><span class="line">                    get_time(tem[<span class="string">&#x27;datetime&#x27;</span>][:19]),Interval.MINUTE,tem[<span class="string">&#x27;volume&#x27;</span>],0,0,tem[<span class="string">&#x27;open&#x27;</span>],tem[<span class="string">&#x27;high&#x27;</span>],tem[<span class="string">&#x27;low&#x27;</span>],tem[<span class="string">&#x27;close&#x27;</span>])</span><br><span class="line">        bars.append(bar)</span><br><span class="line">    gtd.save_bar_data(bars)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/05/vnpy%E6%95%B0%E6%8D%AE%E5%85%A5%E5%BA%93/">展开全文 >></a>
         </p>
       
 

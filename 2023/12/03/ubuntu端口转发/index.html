@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>vm16或wsl开机自启动 | biji</title>
+  <title>ubuntu端口转发 | biji</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vm161234567vmrun 加入环境变量新建启动脚本bat 并写入vmrun start D:\ubt\Ubuntu.vmx nogui又击我的电脑-&gt;管理-&gt;新建基本任务选择开机启动 目标为bat文件保存后再右击设置属性 选择登陆前启动 输入用户密码 wsl 开机自启动 并固定ip 并启动rc.local文件12345678wsl -d Ubuntu-22.04 -u root">
+  <meta name="description" content="1123456789101112开启网络转发vim &#x2F;etc&#x2F;sysctl.confnet.ipv4.ip_forward&#x3D;1sysctl -p &#x2F;etc&#x2F;sysctl.conf iptables -t nat -A PREROUTING -p tcp --dport 7777 -j REDIRECT --to-port 6666iptables -t nat -A PREROUTING -p t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vm16或wsl开机自启动">
-<meta property="og:url" content="http://example.com/2023/12/04/vm16%E4%B8%8B%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/index.html">
+<meta property="og:title" content="ubuntu端口转发">
+<meta property="og:url" content="http://example.com/2023/12/03/ubuntu%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/index.html">
 <meta property="og:site_name" content="biji">
-<meta property="og:description" content="vm161234567vmrun 加入环境变量新建启动脚本bat 并写入vmrun start D:\ubt\Ubuntu.vmx nogui又击我的电脑-&gt;管理-&gt;新建基本任务选择开机启动 目标为bat文件保存后再右击设置属性 选择登陆前启动 输入用户密码 wsl 开机自启动 并固定ip 并启动rc.local文件12345678wsl -d Ubuntu-22.04 -u root">
+<meta property="og:description" content="1123456789101112开启网络转发vim &#x2F;etc&#x2F;sysctl.confnet.ipv4.ip_forward&#x3D;1sysctl -p &#x2F;etc&#x2F;sysctl.conf iptables -t nat -A PREROUTING -p tcp --dport 7777 -j REDIRECT --to-port 6666iptables -t nat -A PREROUTING -p t">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-03T16:52:12.000Z">
-<meta property="article:modified_time" content="2023-12-03T16:59:27.000Z">
+<meta property="article:published_time" content="2023-12-03T17:00:18.000Z">
+<meta property="article:modified_time" content="2023-12-03T17:07:28.000Z">
 <meta property="article:author" content="haha">
 <meta name="twitter:card" content="summary">
   
@@ -154,30 +154,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vm16下开机自启动" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ubuntu端口转发" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vm16或wsl开机自启动
+      ubuntu端口转发
     </h1>
   
 
         
-        <a href="/2023/12/04/vm16%E4%B8%8B%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" class="archive-article-date">
-  	<time datetime="2023-12-03T16:52:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-04</time>
+        <a href="/2023/12/03/ubuntu%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" class="archive-article-date">
+  	<time datetime="2023-12-03T17:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="vm16"><a href="#vm16" class="headerlink" title="vm16"></a>vm16</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vmrun 加入环境变量</span><br><span class="line">新建启动脚本bat 并写入</span><br><span class="line">vmrun start D:\ubt\Ubuntu.vmx nogui</span><br><span class="line"></span><br><span class="line">又击我的电脑-&gt;管理-&gt;新建基本任务</span><br><span class="line">选择开机启动 目标为bat文件</span><br><span class="line">保存后再右击设置属性 选择登陆前启动 输入用户密码</span><br></pre></td></tr></table></figure>
-<h3 id="wsl-开机自启动-并固定ip-并启动rc-local文件"><a href="#wsl-开机自启动-并固定ip-并启动rc-local文件" class="headerlink" title="wsl 开机自启动 并固定ip 并启动rc.local文件"></a>wsl 开机自启动 并固定ip 并启动rc.local文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wsl -d Ubuntu-22.04 -u root ip addr del $(ip addr show eth0 ^| grep <span class="string">&#x27;inet\b&#x27;</span> ^| awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span> ^| <span class="built_in">head</span> -n 1) dev eth0</span><br><span class="line">wsl -d Ubuntu-22.04 -u root ip addr add 192.168.50.2/24 broadcast 192.168.50.255 dev eth0</span><br><span class="line">wsl -d Ubuntu-22.04 -u root ip route add 0.0.0.0/0 via 192.168.50.1 dev eth0</span><br><span class="line">wsl -d Ubuntu-22.04 -u root <span class="built_in">echo</span> nameserver 192.168.50.1 ^&gt; /etc/resolv.conf</span><br><span class="line">powershell -c <span class="string">&quot;Get-NetAdapter &#x27;vEthernet (WSL)&#x27; | Get-NetIPAddress | Remove-NetIPAddress -Confirm:<span class="variable">$False</span>; New-NetIPAddress -IPAddress 192.168.50.1 -PrefixLength 24 -InterfaceAlias &#x27;vEthernet (WSL)&#x27;; Get-NetNat | ? Name -Eq WSLNat | Remove-NetNat -Confirm:<span class="variable">$False</span>; New-NetNat -Name WSLNat -InternalIPInterfaceAddressPrefix 192.168.50.0/24;&quot;</span></span><br><span class="line">wsl -d Ubuntu-22.04 -u root -e /etc/rc.local start</span><br><span class="line"></span><br><span class="line">保存到bat 设置自启动任务</span><br></pre></td></tr></table></figure>
-
-<h3 id="win设置端口转发-局域网能够访问到wsl主机"><a href="#win设置端口转发-局域网能够访问到wsl主机" class="headerlink" title="win设置端口转发 局域网能够访问到wsl主机"></a>win设置端口转发 局域网能够访问到wsl主机</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh interface portproxy add v4tov4 listenport=2200 listenaddress=0.0.0.0 connectport=2200 connectaddress=127.0.0.1 protocol=tcp</span><br></pre></td></tr></table></figure>
+        <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">开启网络转发</span><br><span class="line">vim /etc/sysctl.conf</span><br><span class="line">net.ipv4.ip_forward=1</span><br><span class="line"></span><br><span class="line">sysctl -p /etc/sysctl.conf </span><br><span class="line"></span><br><span class="line">iptables -t nat -A PREROUTING -p tcp --dport 7777 -j REDIRECT --to-port 6666</span><br><span class="line"></span><br><span class="line">iptables -t nat -A PREROUTING -p tcp -d 192.168.0.163 --dport 27896 -j DNAT --to-destination 192.168.0.121:27896</span><br><span class="line"></span><br><span class="line">iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.121 --dport 27896 -j SNAT --to-source 192.168.0.163</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
 
       
@@ -256,7 +253,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/04/vm16%E4%B8%8B%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/03/ubuntu%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -270,18 +267,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2023/12/04/ubuntu%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/12/03/apache2%E5%BC%80%E5%90%AFcgi/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ubuntu端口转发
+          apache2开启cgi
         
       </div>
     </a>
   
   
-    <a href="/2023/12/04/ubuntu%E8%AE%BE%E7%BD%AEsftp%E7%94%A8%E6%88%B7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ubuntu设置sftp用户</div>
+    <a href="/2023/12/03/vm16%E4%B8%8B%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vm16或wsl开机自启动</div>
       <i class="icon-circle-right"></i>
     </a>
   
